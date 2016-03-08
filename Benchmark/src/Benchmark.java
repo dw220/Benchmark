@@ -26,12 +26,17 @@ public class Benchmark {
 	 */
 	public void run()
 	{
-		start = System.currentTimeMillis();
-		for(int i=0; i< numbers.length; i++){
-			calcFact(numbers[i]);
+		double average = 0;
+		for(int j=0; j < 5; j++){
+			start = System.currentTimeMillis();
+			for(int i=0; i< numbers.length; i++){
+				calcFact(numbers[i]);
+			}
+			end = System.currentTimeMillis();
+			average += (end-start);
+			System.out.printf( "No concurrency benchmark test results: %d \n", end - start );
 		}
-		end = System.currentTimeMillis();
-		System.out.printf( "No concurrency benchmark test results: %d", end - start );
+		System.out.println("Average time taken is: " + average/5);
 	}
 	
 	/**
@@ -45,6 +50,5 @@ public class Benchmark {
 			fact = fact.multiply(inc);
 			inc  = inc.add(BigInteger.ONE);
 		}
-		System.out.printf("[%d] factorial number calculated\n", fact);
 	}
 }

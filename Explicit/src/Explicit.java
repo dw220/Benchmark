@@ -3,12 +3,16 @@ import java.math.BigInteger;
 public class Explicit {
 	int[] numbers = 
 		{ 
-				500000, 
-				600000, 
-				700000, 
-				100000, 
-				200000, 
-				300000 
+				90000, 
+				91000, 
+				92000, 
+				93000, 
+				94000, 
+				95000,
+				96000,
+				97000,
+				98000,
+				99000
 		};
 	int counter = 0;
 	BigInteger inc;

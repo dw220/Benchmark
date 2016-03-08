@@ -10,7 +10,7 @@ public class Pool {
 	}
 	
 	public void startPool(){
-		executor = Executors.newFixedThreadPool(6);
+		executor = Executors.newFixedThreadPool(4);
 		for(int i=0; i< e.numbers.length; i++){
 			Workerthread t = new Workerthread(e);
 			executor.execute(t);
