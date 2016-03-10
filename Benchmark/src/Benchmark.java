@@ -4,26 +4,16 @@ public class Benchmark {
 	
 	int[] numbers = 
 		{ 
-				90000, 
-				91000, 
-				92000, 
-				93000, 
-				94000, 
-				95000,
-				96000,
-				97000,
-				98000,
-				99000,
-				90000, 
-				91000, 
-				92000, 
-				93000, 
-				94000, 
-				95000,
-				96000,
-				97000,
-				98000,
-				99000
+				99900,
+				99901,
+				99902,
+				99903,
+				99904,
+				99905,
+				99906,
+				99907,
+				99908,
+				99909
 		};
 	
 	BigInteger inc;
@@ -41,10 +31,11 @@ public class Benchmark {
 			start = System.currentTimeMillis();
 			for(int i=0; i< numbers.length; i++){
 				calcFact(numbers[i]);
+				System.out.printf("finished calculating number %d\n", this.numbers[i]);
 			}
 			end = System.currentTimeMillis();
 			average += (end-start);
-			System.out.printf( "No concurrency benchmark test results: %d \n", end - start );
+			
 		}
 		System.out.println("Average time taken is: " + average/5);
 	}
