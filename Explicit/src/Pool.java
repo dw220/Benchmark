@@ -1,5 +1,6 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Pool {
 	int threadNo = 0;
@@ -16,13 +17,11 @@ public class Pool {
 			executor.execute(t);
 		}
 		executor.shutdown();
-	}
-	
-	public boolean checkExecuting(){
-		if(executor.isTerminated()){
-			return true;
+		try {
+			executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+			} catch (InterruptedException e) {
+			 
 		}
-			return false;
 	}
 	
 }

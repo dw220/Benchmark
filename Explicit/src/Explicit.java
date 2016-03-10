@@ -12,8 +12,19 @@ public class Explicit {
 				96000,
 				97000,
 				98000,
+				99000,
+				90000, 
+				91000, 
+				92000, 
+				93000, 
+				94000, 
+				95000,
+				96000,
+				97000,
+				98000,
 				99000
 		};
+	
 	int counter = 0;
 	BigInteger inc;
 	BigInteger fact;
@@ -25,10 +36,14 @@ public class Explicit {
 	}
 	
 	public synchronized int getNext(){
+		int no = -1;
+		if(getCounter() <= numbers.length){	
 		System.out.println("Getting next number");
 		int number = numbers[counter];
 		inc();
 		return number;
+		}
+		return no;
 	}
 	
 	public void inc(){
