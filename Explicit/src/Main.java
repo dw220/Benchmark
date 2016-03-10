@@ -1,23 +1,17 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Main {
 	
-	public static void main(String args[]) throws InterruptedException
-	{
-		long start = 0;
-		long end = 0;
+	public static void main(String args[]){
 		double average = 0.0;
-		
-		for(int i=0; i<5; i++){
-			start = System.currentTimeMillis();
-			Pool p = new Pool();
-			p.startPool();
-	        end = System.currentTimeMillis();
-	        System.out.printf( "Time taken is %d \n", end - start);
-	        average += (end - start);
-		}
-		System.out.println("Average time is " + average/5);
-        
+	for(int i=0; i<5; i++){		
+		long start = System.currentTimeMillis();
+			Threadpool p = new Threadpool();
+			p.startPool(30);
+		long end = System.currentTimeMillis();
+		average += (end - start);
 	}
+	
+	System.out.printf("Time taken to execut tasks: %f ", average/5);
+	}
+	
 }
