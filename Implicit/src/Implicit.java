@@ -4,27 +4,18 @@ import java.util.Arrays;
 public class Implicit {
 	int[] numbers = 
 		{ 
-				90000, 
-				91000, 
-				92000, 
-				93000, 
-				94000, 
-				95000,
-				96000,
-				97000,
-				98000,
-				99000,
-				90000, 
-				91000, 
-				92000, 
-				93000, 
-				94000, 
-				95000,
-				96000,
-				97000,
-				98000,
-				99000
+				99900,
+				99901,
+				99902,
+				99903,
+				99904,
+				99905,
+				99906,
+				99907,
+				99908,
+				99909
 		};
+	
 	BigInteger inc;
 	BigInteger fact;
 	long start;
@@ -38,7 +29,7 @@ public class Implicit {
 			Arrays.stream(numbers).parallel().forEach( (x) -> { calcFact(x); });
 			
 			end = System.currentTimeMillis();
-			System.out.printf("Implicit concurrency test results, Time taken: %d", end - start);
+			System.out.printf("Implicit concurrency test results, Time taken: %d\n", end - start);
 			average += end-start;
 		}
 		
