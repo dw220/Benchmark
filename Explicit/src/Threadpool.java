@@ -17,6 +17,7 @@ public class Threadpool {
 			this.number = number;
 		}
 
+		//Calcualte the factorial of the given number
 		@Override
 		public void run() {
 			BigInteger fact = new BigInteger( "1" );
@@ -44,6 +45,7 @@ public class Threadpool {
 		}
 		executor.shutdown();
 		
+		//wait for operation to finish
 		try{ executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS); } 
 		catch(InterruptedException e){System.out.println("Thread pool interuptted");}
 	}

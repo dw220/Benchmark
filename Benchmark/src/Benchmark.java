@@ -31,7 +31,6 @@ public class Benchmark {
 			start = System.currentTimeMillis();
 			for(int i=0; i< numbers.length; i++){
 				calcFact(numbers[i]);
-				System.out.printf("finished calculating number %d\n", this.numbers[i]);
 			}
 			end = System.currentTimeMillis();
 			average += (end-start);
